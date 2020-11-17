@@ -5,11 +5,13 @@ print(os.getcwd())
 
 wb = webdriver.Chrome()
 wb.get('http://www.jjwxc.net/fenzhan/yq/')
-elements = wb.find_elements_by_xpath(
-    '//div[@class="b4box"]//ul[@id="mmain3"]//li//dl//dt//a')  # 月榜第一页
+
+# elements = wb.find_elements_by_xpath('//div[@class="b4box"]//ul[@id="mmain3"]//li//dl//dt//a')  # 月榜第一页
 # elements = wb.find_elements_by_xpath('//div[@class="b4box"]//ul[@id="mmain3"]//li[@class="jason2"]//dl//dt//a') # 月榜第二页
-# elements = wb.find_elements_by_xpath('//div[@class="b4box"]//ul[@id="mmain2"]//li//dl//dt//a') # 新晋榜第一页
+elements = wb.find_elements_by_xpath('//div[@class="b4box"]//ul[@id="mmain2"]//li//dl//dt//a') # 新晋榜第一页
 # elements = wb.find_elements_by_xpath('//div[@class="b4box"]//ul[@id="mmain2"]//li[@class="jason2"]//dl//dt//a')# 新晋榜第二页
+
+
 mainWindow = wb.current_window_handle
 filename = 'article.txt'
 
@@ -21,6 +23,7 @@ for element in elements:
         wb.switch_to_window(handle)
         if '晋江文学城' in handle:
             break
+        
 
     tag = wb.find_elements_by_xpath(
         '//div[@class="smallreadbody"]//span/a')  # 获取作品的标签信息

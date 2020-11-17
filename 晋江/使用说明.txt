@@ -1,1 +1,6 @@
-1.
+1.启动jinjiang_200.py
+2.启动wordcount.py
+3.每次使用前删掉article.txt，保证获取的是最新的数据
+
+
+PS：新晋榜数据在jinjiang.py里，忘记什么时候做的，如果需要新晋榜的数据相应的url取消分类即可
